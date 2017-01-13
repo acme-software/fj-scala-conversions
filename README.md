@@ -33,7 +33,7 @@ libraryDependencies ++= Seq(
 See [GitHub Releases](https://github.com/acme-software/fj-scala-conversions/releases) for available versions. The 
 library is available for Scala `2.10`, `2.11` and `2.12`.
 
-Major releases follow the Fonctional Java Library version:
+Major releases follow the Functional Java Library versions:
 
 | FJ Version | Scala Conversions Version |
 | ---------- | ------------------------- |
