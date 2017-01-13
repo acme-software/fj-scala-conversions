@@ -10,7 +10,7 @@ This library provides conversions from [Functional Java Library](http://www.func
 [Java 8](http://www.oracle.com/technetwork/java/javase/8-relnotes-2226341.html) functional types to Scala and vice 
 versa. The following type conversions are supported:
 
-### Functional Fava
+### Functional Java
 
 - `fj.data.Option`
 - `fj.data.Validation`
