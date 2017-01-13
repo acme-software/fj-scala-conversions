@@ -17,7 +17,7 @@ versa. The following type conversions are supported:
 
 ### Java 8
 
-- coming soon
+- `java.util.Optional`
 
 Installation
 ------------
@@ -42,39 +42,45 @@ Major releases follow the Functional Java Library versions:
 Usage
 -----
 
-Just import the `FjConversions`, and call one of the methods beginning with `asScala` on the functional java types.
+Just import the `ch.acmesoftware.fjscalaconversions._` package object contents, and call the converter methods:
 
 ### FJ to Scala example
 
 ```scala
-import ch.acmesoftware.fjscalaconversions.FjConversions._
+import ch.acmesoftware.fjscalaconversions._
+import java.util.Optional
 
 // option
 val fjOption = fj.data.Option.some("example")
 val scalaOption: Option[String] = fjOption.asScala()
 
+val java8Option = Optional.of("example")
+val scalaOption2 = java8Option.asScala()
+
 // validation
 import scala.util.Try
 
 val fjValidation = fj.data.Validation.success[Exception, String]("example") // failurew type must be explicitely stated
-val scalaTry: Try[String] = fjValidation.asScalaTry()
+val scalaTry: Try[String] = fjValidation.asScala()
 
 ```
 
 ### Scala to FJ example
 
 ```scala
-import ch.acmesoftware.fjscalaconversions.FjConversions._
+import ch.acmesoftware.fjscalaconversions._
+import java.util.Optional
 
 // option
 val scalaOption = Some("example")
 val fjOption: fj.data.Option[String] = scalaOption.asFj()
+val java8Optional: Optional[String] = scalaOption.asJava8()
 
 // validation
 import scala.util.Try
 
 val scalaTry = Try("example")
-val fjValidation = scalaTry.asFjValidation()
+val fjValidation: fj.data.Validation[Throwable, String] = scalaTry.asFj()
 ```
 
 Contribution
